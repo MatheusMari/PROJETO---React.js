@@ -1,0 +1,46 @@
+.footer {
+    background-color: #5a2f28; /* Um tom de marrom escuro */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-link {
+    color: #f4c2b8; /* Tom mais claro de rosa/marrom */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #ffdab9; /* Cor clara ao passar o mouse */
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-icon {
+    color: #f4c2b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffdab9;
+}

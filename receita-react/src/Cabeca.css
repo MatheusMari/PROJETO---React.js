@@ -1,0 +1,32 @@
+
+Cabeca {
+    background-color: #b1625a; /* Fundo do cabeçalho */
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+Cabeca h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+Cabeca img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+Cabeca .menu-icons {
+    display: flex;
+    gap: 15px;
+}
+
+Cabeca .menu-icons i {
+    font-size: 1.2rem;
+    color: #181818;
+    cursor: pointer;
+}
