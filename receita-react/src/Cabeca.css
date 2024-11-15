@@ -7,31 +7,41 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif';
 }
 
 .Cabeca-left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    
 }
 
 .logo {
-    width: 20px; /* Reduz o tamanho do logo */
+    width: 5px; /* Reduz o tamanho do logo */
     height: auto;
+    
 }
 .Cabeca h1 {
     font-size: 1.2rem;
     font-weight: bold;
     margin: 0px;
+    
 }
 
 .menu-icons {
     display: flex;
     gap: 20px;
+    
 }
 
 .menu-icons i {
     font-size: 1.5rem;
     color: #181818;
     cursor: pointer;
+    
+}
+.circle-image{
+ left: 100px;
+ align-items: flex-end;
+ 
 }

@@ -1,5 +1,4 @@
 
-/* Estilo principal do conteúdo */
 .Contend-content {
     display: flex;
     align-items: center;
@@ -8,6 +7,8 @@
     color: #fff;
     padding: 90px;
     gap: 40px;
+     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
+     
 }
 
 /* Imagem circular à esquerda */
@@ -17,9 +18,10 @@
     justify-content: center;
     align-items: center;
     position: absolute; /* Posiciona a imagem */
-    bottom: 0; /* Alinha ao fundo da tela */
-    left: 0; /* Alinha ao lado esquerdo da tela */
-    width: 400px; /* Tamanho médio da imagem */
+    bottom: 0;
+    top: 250px; /* Alinha ao fundo da tela */
+    left: 10px; /* Alinha ao lado esquerdo da tela */
+    width: 300px; /* Tamanho médio da imagem */
     height: 300px; /* Mantém a imagem proporcional */
     clip-path: ellipse(80% 50% at 50% 50%); /* Corta a imagem em forma de meia-lua */
     border-radius: 50%; /* Torna a imagem redonda */
