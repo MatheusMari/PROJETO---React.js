@@ -1,26 +1,96 @@
+
+/* Estilo principal do conteúdo */
 .Contend-content {
-    text-align: center;
-  }
-  
-  .Contend-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .Contend-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .Contend-header {
-    background-color: #6E3D33;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: rgb(142, 80, 80);
-  }
-  
+    background-color: #7c4c4c;
+    color: #fff;
+    padding: 90px;
+    gap: 40px;
+}
+
+/* Imagem circular à esquerda */
+.left-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Posiciona a imagem */
+    bottom: 0; /* Alinha ao fundo da tela */
+    left: 0; /* Alinha ao lado esquerdo da tela */
+    width: 400px; /* Tamanho médio da imagem */
+    height: 300px; /* Mantém a imagem proporcional */
+    clip-path: ellipse(80% 50% at 50% 50%); /* Corta a imagem em forma de meia-lua */
+    border-radius: 50%; /* Torna a imagem redonda */
+     /* Garante que o conteúdo da imagem não ultrapasse a área cortada */
+}
+
+.circle-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #834343;
+}
+
+/* Conteúdo central à direita */
+.right-content {
+    flex: 2;
+    text-align: center;
+}
+
+.right-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.button-choose {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff9e9e;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-choose:hover {
+    background-color: #ffb5b5;
+}
+
+/* Estilo do texto e tipos de receita */
+.right-content p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.recipe-types {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Estilo de cada item de receita */
+.recipe-item {
+    text-align: center;
+}
+
+.recipe-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 5px solid #834343;
+}
+
+.recipe-item p {
+    font-size: 1rem;
+    font-weight: bold;
+}
