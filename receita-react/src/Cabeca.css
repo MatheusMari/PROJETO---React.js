@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif';
+    font-Family: '"Roboto", "Helvetica", "Arial", sans-serif';
 }
 
 .Cabeca-left {
