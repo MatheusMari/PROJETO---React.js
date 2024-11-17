@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cabeca from './Cabeca';
-import Conteudo from './Conteudo';
 import Footer from './Footer';
+import Conteudo from './Conteudo';
 import CategoryList from './CategoryList';
-import './App.css';
+import RecipeList from './RecipeList';
+import RecipeDetail from './RecipeDetail'; // Nova tela para detalhes da receita
 
 function App() {
   return (
@@ -12,10 +13,10 @@ function App() {
       <div className="App">
         <Cabeca />
         <Routes>
-          {/* Rota para a página inicial */}
           <Route path="/" element={<Conteudo />} />
-          {/* Rota para a segunda tela (categorias) */}
           <Route path="/recipes" element={<CategoryList />} />
+          <Route path="/recipes/:category" element={<RecipeList />} /> {/* Nova rota para terceira tela */}
+          <Route path="/recipe/:id" element={<RecipeDetail />} /> {/* Nova rota para quarta tela */}
         </Routes>
         <Footer />
       </div>
