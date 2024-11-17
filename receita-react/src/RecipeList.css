@@ -1,0 +1,30 @@
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.recipe-item {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.recipe-item:hover {
+  transform: scale(1.05);
+}
+
+.recipe-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.recipe-item h3 {
+  margin: 10px 0;
+}

@@ -1,14 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Conteudo.css';
-import pizza from './Pizza.jpg'; // Substitua pelo caminho da imagem de pizza
+import pizza from './Pizza.jpg'; // Substitua pelo caminho correto da imagem de pizza
 import salgadas from './salgada.jpg';
 import doces from './doce.jpg';
 import veganas from './vegana.jpg';
 import { Button } from '@mui/material';
 
 function Conteudo() {
+  const navigate = useNavigate(); // Hook para navegação
+
+  const handleNavigate = () => {
+    navigate('/recipes'); // Redireciona para a segunda tela
+  };
+
   return (
-    
     <div className="Contend-content">
       {/* Imagem circular à esquerda */}
       <div className="left-image">
@@ -16,11 +22,13 @@ function Conteudo() {
       </div>
       {/* Conteúdo central */}
       <div className="right-content">
-        <h2 style={{ fontFamily: '"Roboto", sans-serif' }} >Venha conhecer e pesquisar receitas de todos os tipos!</h2>
-        <Button variant="contained" color="pink ">
-        Clique Aqui
-      </Button> 
-        
+        <h2 style={{ fontFamily: '"Roboto", sans-serif' }}>
+          Venha conhecer e pesquisar receitas de todos os tipos!
+        </h2>
+        <Button variant="contained" color="primary" onClick={handleNavigate}>
+          Clique Aqui
+        </Button>
+
         <p>Escolha seu tipo de receita favorito!</p>
 
         {/* Tipos de receita */}
