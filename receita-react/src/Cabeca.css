@@ -1,47 +1,40 @@
-
 .Cabeca {
-    background-color: #090000;
-    color: #6b3232;
-    width: 30%;
-    padding: 3px 3px;
+    background-color: #935753; /* Cor de fundo semelhante à da imagem */
+    color: #FFFFFF; /* Cor do texto branca para contraste */
+    width: 100%; /* Usar 100% para ocupar a largura total */
+    padding: 10px 0px; /* Ajuste de espaçamento */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-Family: '"Roboto", "Helvetica", "Arial", sans-serif';
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
 .Cabeca-left {
     display: flex;
     align-items: center;
-    
+    padding-top: 0px;
+    padding-left: 10px;
 }
 
 .logo {
-    width: 5px; /* Reduz o tamanho do logo */
+    width: 30px; /* Tamanho do logo */
     height: auto;
-    
+    margin-right: 10px;
 }
+
 .Cabeca h1 {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0px;
-    
+    margin: 0;
 }
 
 .menu-icons {
     display: flex;
     gap: 20px;
-    
 }
 
-.menu-icons i {
-    font-size: 1.5rem;
-    color: #181818;
+.menu-icons .MuiSvgIcon-root {
+    font-size: 1.8rem;
+    color: #FFFFFF; /* Cor dos ícones */
     cursor: pointer;
-    
-}
-.circle-image{
- left: 100px;
- align-items: flex-end;
- 
 }

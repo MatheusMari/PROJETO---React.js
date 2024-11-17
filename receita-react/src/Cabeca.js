@@ -1,14 +1,20 @@
 import React from 'react';
-
+import SettingsIcon from '@mui/icons-material/Settings';
+import MenuIcon from '@mui/icons-material/Menu';
+import './Cabeca.css';
 
 function Cabeca() {
     return (
-        <header className="Cabeca">
+        <div className="Cabeca">
             <div className="Cabeca-left">
-            <h1>Recipe Haven</h1> 
+                
+                <h1>Recipe Haven</h1>
             </div>
-            
-        </header>
+            <div className="menu-icons">
+                <MenuIcon />        
+                <SettingsIcon />
+            </div>
+        </div>
     );
 }
 
