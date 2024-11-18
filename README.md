@@ -30,25 +30,32 @@ A aplicação exibe categorias de receitas, permite a busca de receitas específ
 - [Redux](https://redux.js.org/)
 - [API de Receitas](https://www.themealdb.com/api.php)
 
-
 ## 🛠️ Instalação e Execução
 
-- Antes de incializar todo o processo realize o comando "cd receita-react" para garantir que esta dentro da pasta correta
+- Antes de iniciar todo o processo, execute o comando `cd receita-react` para garantir que está dentro da pasta correta.
 
-1. Clone o repositório:
-   ```bash
-   git clone <URL_DO_REPOSITORIO>
-   ```
+### 1. Clone o repositório:
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
 
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
+### 2. Instale as dependências:
+```bash
+npm install
+```
 
-3. Inicie a aplicação:
-   ```bash
-   npm start
-   ```
+### 3. Instale as bibliotecas necessárias:
+```bash
+npm install react-redux @reduxjs/toolkit
+npm install axios
+npm install react-router-dom
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+### 4. Inicie a aplicação:
+```bash
+npm start
+```
 
 A aplicação estará disponível em `http://localhost:3000`.
 
@@ -86,7 +93,7 @@ Contribuições são bem-vindas! Siga os passos abaixo:
    ```
 3. Faça o commit das suas alterações:
    ```bash
-   git commit -m 
+   git commit -m 'Adiciona nova feature'
    ```
 4. Faça o push para a branch:
    ```bash
