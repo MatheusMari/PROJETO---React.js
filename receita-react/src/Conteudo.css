@@ -1,4 +1,3 @@
-
 .Contend-content {
     display: flex;
     align-items: center;
@@ -7,8 +6,8 @@
     color: #fff;
     padding: 90px;
     gap: 40px;
-     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
-     
+    font-family: '"Roboto", "Helvetica", "Arial", sans-serif';
+    flex-wrap: wrap; /* Permite que os itens quebrem em várias linhas em telas pequenas */
 }
 
 /* Imagem circular à esquerda */
@@ -25,7 +24,7 @@
     height: 300px; /* Mantém a imagem proporcional */
     clip-path: ellipse(80% 50% at 50% 50%); /* Corta a imagem em forma de meia-lua */
     border-radius: 50%; /* Torna a imagem redonda */
-     /* Garante que o conteúdo da imagem não ultrapasse a área cortada */
+    /* Garante que o conteúdo da imagem não ultrapasse a área cortada */
 }
 
 .circle-image {
@@ -40,6 +39,7 @@
 .right-content {
     flex: 2;
     text-align: center;
+    margin-left: 320px; /* Espaço para a imagem circular à esquerda */
 }
 
 .right-content h2 {
@@ -95,4 +95,100 @@
 .recipe-item p {
     font-size: 1rem;
     font-weight: bold;
+}
+
+/* Media queries para tornar o layout responsivo */
+
+@media (max-width: 1200px) {
+    .Contend-content {
+        padding: 60px;
+        gap: 20px;
+    }
+
+    .left-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .right-content {
+        margin-left: 280px; /* Ajusta a margem para a imagem circular */
+    }
+
+    .recipe-types {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Contend-content {
+        flex-direction: column; /* Coloca os itens um embaixo do outro */
+        padding: 40px;
+        gap: 20px;
+    }
+
+    .left-image {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-content {
+        margin-left: 0;
+    }
+
+    .recipe-types {
+        flex-direction: column; /* Coloca os itens de receita em uma coluna */
+        gap: 15px;
+    }
+
+    .recipe-image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Contend-content {
+        padding: 20px;
+    }
+
+    .left-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .circle-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .right-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .button-choose {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .recipe-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .recipe-item p {
+        font-size: 0.9rem;
+    }
 }
