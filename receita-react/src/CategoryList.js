@@ -38,8 +38,9 @@ const CategoryList = () => {
 
   return (
     <div className="category-list">
-      {categories.length > 0 ? (
-        categories.map((category) => (
+      <h2>Categorias de Receitas</h2>
+      {categories.length > 0 ? 
+        (categories.map((category) => (
           <div key={category.idCategory} className="category-item">
             {/* Torna a imagem clicável */}
             <img
