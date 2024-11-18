@@ -13,7 +13,7 @@ const CategoryList = () => {
       try {
         const response = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
         const data = await response.json();
-        setCategories(data.categories); // Certifique-se de que "categories" é o caminho correto na resposta
+        setCategories(data.categories); 
       } catch (err) {
         setError('Erro ao carregar as categorias.');
       } finally {
@@ -42,21 +42,18 @@ const CategoryList = () => {
       {categories.length > 0 ? 
         (categories.map((category) => (
           <div key={category.idCategory} className="category-item">
-            {/* Torna a imagem clicável */}
             <img
               src={category.strCategoryThumb}
               alt={category.strCategory}
               className="clickable"
               onClick={() => handleCategoryClick(category.strCategory)}
             />
-            {/* Torna o título clicável */}
             <h2
               className="clickable"
               onClick={() => handleCategoryClick(category.strCategory)}
             >
               {category.strCategory}
             </h2>
-            {/* Descrição permanece visível */}
             <p>{category.strCategoryDescription}</p>
           </div>
         ))

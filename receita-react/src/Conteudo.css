@@ -7,24 +7,22 @@
     padding: 90px;
     gap: 40px;
     font-family: '"Roboto", "Helvetica", "Arial", sans-serif';
-    flex-wrap: wrap; /* Permite que os itens quebrem em várias linhas em telas pequenas */
+    flex-wrap: wrap; 
 }
 
-/* Imagem circular à esquerda */
 .left-image {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute; /* Posiciona a imagem */
+    position: absolute;
     bottom: 0;
-    top: 250px; /* Alinha ao fundo da tela */
-    left: 10px; /* Alinha ao lado esquerdo da tela */
-    width: 300px; /* Tamanho médio da imagem */
-    height: 300px; /* Mantém a imagem proporcional */
-    clip-path: ellipse(80% 50% at 50% 50%); /* Corta a imagem em forma de meia-lua */
-    border-radius: 50%; /* Torna a imagem redonda */
-    /* Garante que o conteúdo da imagem não ultrapasse a área cortada */
+    top: 250px; 
+    left: 10px; 
+    width: 300px; 
+    height: 300px; 
+    clip-path: ellipse(80% 50% at 50% 50%); 
+    border-radius: 50%; 
 }
 
 .circle-image {
@@ -35,11 +33,11 @@
     border: 5px solid #834343;
 }
 
-/* Conteúdo central à direita */
+
 .right-content {
     flex: 2;
     text-align: center;
-    margin-left: 320px; /* Espaço para a imagem circular à esquerda */
+    margin-left: 320px;
 }
 
 .right-content h2 {
@@ -65,7 +63,6 @@
     background-color: #ffb5b5;
 }
 
-/* Estilo do texto e tipos de receita */
 .right-content p {
     margin-top: 20px;
     font-size: 1.2rem;
@@ -78,7 +75,6 @@
     margin-top: 20px;
 }
 
-/* Estilo de cada item de receita */
 .recipe-item {
     text-align: center;
 }
@@ -97,7 +93,6 @@
     font-weight: bold;
 }
 
-/* Media queries para tornar o layout responsivo */
 
 @media (max-width: 1200px) {
     .Contend-content {
@@ -116,7 +111,7 @@
     }
 
     .right-content {
-        margin-left: 280px; /* Ajusta a margem para a imagem circular */
+        margin-left: 280px; 
     }
 
     .recipe-types {
@@ -126,7 +121,7 @@
 
 @media (max-width: 768px) {
     .Contend-content {
-        flex-direction: column; /* Coloca os itens um embaixo do outro */
+        flex-direction: column; 
         padding: 40px;
         gap: 20px;
     }
@@ -149,7 +144,7 @@
     }
 
     .recipe-types {
-        flex-direction: column; /* Coloca os itens de receita em uma coluna */
+        flex-direction: column; 
         gap: 15px;
     }
 

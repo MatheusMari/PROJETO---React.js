@@ -20,13 +20,13 @@
 }
 
 .footer-link {
-    color: #f4c2b8; /* Tom mais claro de rosa/marrom */
+    color: #f4c2b8; 
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-link:hover {
-    color: #ffdab9; /* Cor clara ao passar o mouse */
+    color: #ffdab9; 
 }
 
 .footer-socials {

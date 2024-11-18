@@ -5,7 +5,7 @@ import Footer from './Footer';
 import Conteudo from './Conteudo';
 import CategoryList from './CategoryList';
 import RecipeList from './RecipeList';
-import RecipeDetail from './RecipeDetail'; // Nova tela para detalhes da receita
+import RecipeDetail from './RecipeDetail'; 
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Conteudo />} />
           <Route path="/recipes" element={<CategoryList />} />
-          <Route path="/recipes/:category" element={<RecipeList />} /> {/* Nova rota para terceira tela */}
-          <Route path="/recipe/:id" element={<RecipeDetail />} /> {/* Nova rota para quarta tela */}
+          <Route path="/recipes/:category" element={<RecipeList />} /> 
+          <Route path="/recipe/:id" element={<RecipeDetail />} /> 
         </Routes>
         <Footer />
       </div>

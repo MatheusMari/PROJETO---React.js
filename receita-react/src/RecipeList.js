@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRecipesByCategory } from '../src/redux/recipeSlice'; // Ação para buscar receitas por categoria
 import { useParams, useNavigate } from 'react-router-dom';
-import './RecipeList.css'; // Arquivo de estilos
+import './RecipeList.css'; 
 
 const RecipeList = () => {
   const { category } = useParams(); // Obtém o parâmetro de categoria da URL
@@ -29,7 +29,7 @@ const RecipeList = () => {
 
   return (
     <div className="recipe-list">
-      <h2>Receitas de {category}</h2> {/* Exibe o nome da categoria */}
+      <h2>Receitas de {category}</h2>
       {recipes.length > 0 ? (
         recipes.map((recipe) => (
           <div
