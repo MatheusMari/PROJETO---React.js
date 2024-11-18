@@ -33,6 +33,8 @@ A aplicação exibe categorias de receitas, permite a busca de receitas específ
 
 ## 🛠️ Instalação e Execução
 
+- Antes de incializar todo o processo realize o comando "cd receita-react" para garantir que esta dentro da pasta correta
+
 1. Clone o repositório:
    ```bash
    git clone <URL_DO_REPOSITORIO>
