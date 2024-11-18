@@ -100,7 +100,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 - Matheus Marinho Rodrigues
 - Felipe Bras Coutinho de Oliveira
-
-## 📞 Contato
-
-Para dúvidas ou sugestões, entre em contato através do e-mail: [email@example.com](mailto:email@example.com).
