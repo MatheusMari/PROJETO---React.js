@@ -10,6 +10,9 @@ function Cabeca() {
   const handleLoginClick = () => {
     navigate('/login');
   };
+  const handleRegisterClick = () => {
+    navigate('/register');
+  };
 
   return (
     <div className="Cabeca">
@@ -30,7 +33,7 @@ function Cabeca() {
 
       <div className="botoesaction">
         <button className="custom-button" onClick={handleLoginClick}>Login</button>
-        <button className="custom-button">Registrar-se</button>
+        <button className="custom-button" onClick={handleRegisterClick}>Registrar-se</button>
       </div>
     </div>
   );

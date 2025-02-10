@@ -7,6 +7,7 @@ import CategoryList from './CategoryList';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail'; 
 import Login from './Login'; 
+import Register from './Register';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Conteudo />} />
           <Route path="/login" element={<Login />} /> 
+          <Route path="/register" element={<Register />} />
           <Route path="/recipes" element={<CategoryList />} />
           <Route path="/recipes/:category" element={<RecipeList />} /> 
           <Route path="/recipe/:id" element={<RecipeDetail />} /> 
