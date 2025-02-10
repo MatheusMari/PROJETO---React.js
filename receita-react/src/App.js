@@ -6,7 +6,7 @@ import Conteudo from './Conteudo';
 import CategoryList from './CategoryList';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail'; 
-import connectDB from '../database/database.js';
+import Login from './Login'; 
 function App() {
   return (
     <Router>
@@ -14,6 +14,7 @@ function App() {
         <Cabeca />
         <Routes>
           <Route path="/" element={<Conteudo />} />
+          <Route path="/login" element={<Login />} /> 
           <Route path="/recipes" element={<CategoryList />} />
           <Route path="/recipes/:category" element={<RecipeList />} /> 
           <Route path="/recipe/:id" element={<RecipeDetail />} /> 
@@ -26,18 +27,6 @@ function App() {
 
 
 
-const app = express();
-const PORT = 3000;
 
-// Conectar ao MongoDB antes de iniciar o servidor
-connectDB();
-
-app.get('/', (req, res) => {
-    res.send("API conectada ao MongoDB!");
-});
-
-app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${3000}`);
-});
 
 export default App;
