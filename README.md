@@ -1,111 +1,70 @@
+# Getting Started with Create React App
 
-# Projeto de Receitas
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Este projeto foi desenvolvido como parte da disciplina **Programação Web Fullstack**. Trata-se de uma aplicação frontend utilizando React.js, Material UI e Redux para consumir dados de uma API de receitas.
+## Available Scripts
 
-## 📋 Descrição
+In the project directory, you can run:
 
-A aplicação exibe categorias de receitas, permite a busca de receitas específicas e apresenta detalhes sobre cada receita. Utilizando o conceito de **Single Page Application (SPA)**, todas as interações são feitas sem redirecionamento, proporcionando uma experiência fluida ao usuário.
+### `npm start`
 
-### Tecnologias Utilizadas
-- **React.js**: Biblioteca JavaScript para construção da interface.
-- **Material UI**: Biblioteca de componentes React para estilização.
-- **Redux**: Gerenciamento de estado global da aplicação.
-- **API de Receitas**: Fonte de dados utilizada para exibir as categorias e detalhes das receitas.
-- **Async/Await**: Para manipulação de requisições assíncronas.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 🔧 Funcionalidades
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- Listagem de categorias de receitas utilizando dados da API.
-- Busca de receitas por categoria.
-- Exibição de detalhes da receita, incluindo imagem, ingredientes e instruções.
-- Interface amigável e responsiva utilizando Material UI.
-- Gerenciamento de estado com Redux para facilitar a comunicação entre componentes.
-- Manipulação assíncrona de dados com `async` e `await`.
+### `npm test`
 
-## 🚀 Tecnologias e Bibliotecas
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- [React.js](https://react.dev/)
-- [Material UI](https://mui.com/)
-- [Redux](https://redux.js.org/)
-- [API de Receitas](https://www.themealdb.com/api.php)
+### `npm run build`
 
-## 🛠️ Instalação e Execução
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Antes de iniciar todo o processo, execute o comando `cd receita-react` para garantir que está dentro da pasta correta.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 1. Clone o repositório:
-```bash
-git clone <URL_DO_REPOSITORIO>
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### 2. Instale as dependências:
-```bash
-npm install
-```
+### `npm run eject`
 
-### 3. Instale as bibliotecas necessárias:
-```bash
-npm install react-redux @reduxjs/toolkit
-npm install axios
-npm install react-router-dom
-npm install @mui/material @emotion/react @emotion/styled
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### 4. Inicie a aplicação:
-```bash
-npm start
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-A aplicação estará disponível em `http://localhost:3000`.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## 🌐 Consumo da API
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-A aplicação consome dados da API **TheMealDB**, que fornece informações sobre categorias de receitas, detalhes das receitas e imagens. Abaixo um exemplo de resposta da API:
+## Learn More
 
-```json
-{
-  "categories": [
-    {
-      "idCategory": "1",
-      "strCategory": "Beef",
-      "strCategoryThumb": "https://www.themealdb.com/images/category/beef.png",
-      "strCategoryDescription": "Beef is the culinary name for meat from cattle..."
-    }
-  ]
-}
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## 📂 Hooks e Funcionalidades
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-O projeto utiliza os seguintes hooks e funcionalidades:
-- **Redux** para gerenciamento de estado global.
-- **Async/Await** para manipulação de requisições assíncronas.
-- **Material UI** para componentes estilizados e responsivos.
+### Code Splitting
 
-## 🤝 Contribuições
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Contribuições são bem-vindas! Siga os passos abaixo:
-1. Faça um fork do projeto.
-2. Crie uma branch para a sua feature:
-   ```bash
-   git checkout -b feature/nome-da-feature
-   ```
-3. Faça o commit das suas alterações:
-   ```bash
-   git commit -m 'Adiciona nova feature'
-   ```
-4. Faça o push para a branch:
-   ```bash
-   git push origin feature/nome-da-feature
-   ```
-5. Abra um pull request.
+### Analyzing the Bundle Size
 
-## 📝 Licença
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+### Making a Progressive Web App
 
-## 👨‍💻 Desenvolvedores
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-- Matheus Marinho Rodrigues
-- Felipe Bras Coutinho de Oliveira
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
