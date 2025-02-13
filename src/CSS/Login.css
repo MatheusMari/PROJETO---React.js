@@ -1,0 +1,55 @@
+/* Estilização do container de login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #8f5454, #a35f5f);
+}
+
+/* Estilização do formulário */
+.login-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+
+/* Título do formulário */
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #8f5454;
+}
+
+/* Estilização dos inputs */
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botão de login */
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #8f5454;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #7a4747;
+}
+
+.error-message {
+    color: red;
+    margin: 10px 0;
+}
