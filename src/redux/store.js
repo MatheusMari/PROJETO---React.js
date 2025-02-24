@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import categoryReducer from "./categorySlice";
-import recipeReducer from "./recipeSlice";
+import categoryReducer from "./categorySlice.js";
+import recipeReducer from "./recipeSlice.js";
 
 // Configuração da store do Redux
 export const store = configureStore({
