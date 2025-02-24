@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect} from 'react';
 import { criarUsuario, logarUsuario, deletarUsuario, buscarSecao, deslogarUsuario } from '../Backend/Servidor.js';
+
 
 const AuthContext = createContext();
 
@@ -11,15 +12,16 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const pegarUsuario = async () => {
             setLoading(true);
+            setError(null);
             try {
                 const response = await buscarSecao();
                 if (response.status === 200) {
-                    setUser(response.data);
+                    setUser(response.data.user);
                 } else {
-                    setError('Não foi possível recuperar os dados do usuário.');
+                    setError(response.data.message || 'Erro ao recuperar o usuário.');
                 }
             } catch (err) {
-                setError(err.response ? err.response.data : "Erro desconhecido ao tentar buscar o usuário.");
+                setError(err.response?.data?.message || "Erro desconhecido ao buscar usuário.");
             } finally {
                 setLoading(false);
             }
@@ -30,17 +32,18 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         setLoading(true);
+        setError(null);
         try {
             const response = await logarUsuario(email, password);
             if (response.status === 200) {
-                setUser(response.data);
+                setUser(response.data.user);
+                return response; // Adicionando retorno da resposta
             } else {
-                setError('Credenciais inválidas.');
+                setError(response.data.message || 'Credenciais inválidas.');
             }
-
-            return response;
         } catch (err) {
-            setError(err.response ? err.response.data : "Erro desconhecido durante login.");
+            setError(err.response?.data?.message || "Erro desconhecido durante login.");
+            setUser(null);
         } finally {
             setLoading(false);
         }
@@ -48,11 +51,12 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         setLoading(true);
+        setError(null);
         try {
             await deslogarUsuario();
             setUser(null);
         } catch (err) {
-            setError(err.response ? err.response.data : "Erro desconhecido durante logout.");
+            setError(err.response?.data?.message || "Erro desconhecido durante logout.");
         } finally {
             setLoading(false);
         }
@@ -60,11 +64,12 @@ export const AuthProvider = ({ children }) => {
 
     const deletar = async (id) => {
         setLoading(true);
+        setError(null);
         try {
             await deletarUsuario(id);
             setUser(null);
         } catch (err) {
-            setError(err.response ? err.response.data : "Erro desconhecido ao tentar deletar o usuário.");
+            setError(err.response?.data?.message || "Erro desconhecido ao tentar deletar o usuário.");
         } finally {
             setLoading(false);
         }
@@ -72,19 +77,13 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password) => {
         setLoading(true);
+        setError(null);
         try {
             const response = await criarUsuario(name, email, password);
-
-            if (response.status === 400) {
-                throw new Error("Por favor, preencha todos os campos!");
-            } else if (response.status === 499) {
-                throw new Error("Usuário já existe.");
-            }
-
-            setUser(response.data);
+            setUser(response.data.user);
             return response;
         } catch (err) {
-            setError(err.response ? err.response.data : err.message || "Erro desconhecido durante registro.");
+            setError(err.response?.data?.message || "Erro desconhecido durante registro.");
         } finally {
             setLoading(false);
         }

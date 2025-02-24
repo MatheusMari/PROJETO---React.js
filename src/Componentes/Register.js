@@ -1,45 +1,67 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Contextos/Autenticacao.js";
-import "../CSS/Login.css"; // Reutilizando o mesmo arquivo de estilos, você pode personalizar para registro também
+import "../CSS/Login.css";
 
 const Register = () => {
-    const [name, setName] = useState(""); // Para o nome
-    const [email, setEmail] = useState(""); // Para o e-mail
-    const [password, setPassword] = useState(""); // Para a senha
-    const [confirmPassword, setConfirmPassword] = useState(""); // Para confirmar a senha
+    const [name, setName] = useState(""); 
+    const [email, setEmail] = useState(""); 
+    const [password, setPassword] = useState(""); 
+    const [confirmPassword, setConfirmPassword] = useState(""); 
+    const [errorMessage, setErrorMessage] = useState(""); // Estado para erros
     const navigate = useNavigate();
-    const { register, error } = useAuth();
+    const { register } = useAuth(); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // Validação simples
+        setErrorMessage(""); // Reseta o erro antes de enviar
+    
         if (password !== confirmPassword) {
-            alert("As senhas não coincidem!");
+            setErrorMessage("As senhas não coincidem!");
             return;
         }
-
-        // Simulação de registro (substituir por lógica real)
-        if (email && password && name) {
-            try {
-                const response = await register(name, email, password);
-                if (response.status < 400) {
-                    navigate("/"); // Redireciona para a página inicial
-                }
-            } catch (err) {
-                console.error("Erro ao registrar:", err);
-                alert("Erro ao registrar, tente novamente!");
+    
+        if (!name || !email || !password) {
+            setErrorMessage("Por favor, preencha todos os campos!");
+            return;
+        }
+    
+        try {
+            const response = await register(name, email, password);
+    
+            if (response.status < 400) {
+                navigate("/"); // Redireciona para a página inicial
+            } else {
+                setErrorMessage(response.data?.message || "Erro ao registrar, tente novamente!");
             }
-        } else {
-            alert("Por favor, preencha todos os campos!");
+        } catch (err) {
+            console.error("Erro ao registrar:", err);
+    
+            if (err.response) {
+                if (err.response.status === 409) {
+                    const confirmar = window.confirm("Usuário já existe! Deseja fazer login?");
+                    if (confirmar) {
+                        navigate("/login");
+                    }
+                } else if (err.response.data?.errors) {
+                    // Captura erros do express-validator
+                    setErrorMessage(err.response.data.errors.map(err => err.msg).join(" | "));
+                } else {
+                    setErrorMessage(err.response.data?.message || "Erro ao registrar, tente novamente!");
+                }
+            } else {
+                setErrorMessage("Erro ao conectar-se ao servidor. Tente novamente mais tarde.");
+            }
         }
     };
+    
 
     return (
         <div className="login-container">
             <form className="login-form" onSubmit={handleSubmit}>
                 <h2>Registrar-se</h2>
+
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
 
                 <label>Nome:</label>
                 <input
@@ -78,8 +100,6 @@ const Register = () => {
                 />
 
                 <button type="submit">Registrar</button>
-
-                {error && <p className="error-message">{error}</p>}
             </form>
         </div>
     );

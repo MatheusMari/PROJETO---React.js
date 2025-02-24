@@ -1,14 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { listarFavoritos, removerFavorito } from "../Backend/Servidor.js";
 import Comentario from "./Comentario.js";
+import { useNavigate } from "react-router-dom"; // Importar o hook useNavigate
+import {useAuth}  from "../Contextos/Autenticacao.js";
 // import "../CSS/Favoritos.css";
-
 const Favoritos = () => {
+    const navigate = useNavigate();
+    const { user } = useAuth ();  // Obtendo o usuário logado do contexto
     const [favoritos, setFavoritos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!user) {
+            setError("Você precisa estar logado para ver os favoritos.");
+            setLoading(false);
+            // Redireciona após 3 segundos de exibição da mensagem de erro
+            setTimeout(() => {
+                navigate("/login"); // Redirecionar para a tela de login
+            }, 3000); // Tempo de exibição da mensagem (3 segundos)
+            return;
+        }
         const fetchFavoritos = async () => {
             try {
                 const response = await listarFavoritos();

@@ -12,16 +12,17 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         try {
             const resp = await login(email, password);
-            if (resp.status === 433) {
-                setError("Usuário não encontrado");
+            if (resp && resp.status === 200) { // Verifica se a resposta existe e se o status é 200
+                navigate("/"); // Redireciona para a Home após login bem-sucedido
             } else {
-                navigate("/");
+                setError(resp?.data?.message || "Usuário ou senha inválidos");
             }
         } catch (error) {
             console.log(error);
+            setError("Erro ao conectar com o servidor");
         }
     };
 
