@@ -1,7 +1,7 @@
 import { ModeloFavorito } from '../bd/Modelos.js';
 
 // Função para adicionar um favorito
-export const adicionarFavorito = async (req, res) => {
+export const criarFavorito= async (req, res) => {
     const { item } = req.body;
     const userId = req.session.user?._id; // Verifica se o usuário está logado
 
@@ -22,7 +22,7 @@ export const adicionarFavorito = async (req, res) => {
 };
 
 // Função para remover um favorito
-export const removerFavorito = async (req, res) => {
+export const deletarFavorito = async (req, res) => {
     const { itemName } = req.params;
 
     try {
@@ -58,7 +58,7 @@ export const listarFavoritos = async (req, res) => {
 };
 
 // Função para adicionar um comentário a um favorito
-export const adicionarComentario = async (req, res) => {
+export const criarComentario = async (req, res) => {
     const { favoritoId, text } = req.body;
 
     if (!text) {
@@ -85,7 +85,7 @@ export const adicionarComentario = async (req, res) => {
 };
 
 // Função para remover um comentário de um favorito
-export const removerComentario = async (req, res) => {
+export const deletarComentario = async (req, res) => {
     const { favoritoId, comentarioId } = req.params;
 
     try {
