@@ -5,8 +5,13 @@ import logger from 'morgan';
 import cors from 'cors';
 import session from 'express-session';
 import dotenv from 'dotenv';
+import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
 import favoritosRouter from './routes/favoritos.js';
+import { limiter } from './middleware/rateLimiter.js';
+import compression from 'compression';
+import fs from 'fs';
+import https from 'https';
 import './bd/Servidor.js';
 
 dotenv.config(); // Carrega variáveis de ambiente
@@ -17,10 +22,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(limiter);
+app.use(compression());
 
 // Configuração do CORS para permitir credenciais
 app.use(cors({
-	origin: 'http://localhost:3000',
+	origin: [
+		'http://localhost:3000',  // Permite HTTP
+		'https://localhost:3000'  // Permite HTTPS
+	],
 	credentials: true
 }));
 
@@ -37,12 +47,19 @@ app.use(session({
 }));
 
 // Rotas
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/favoritos', favoritosRouter);
 
 // Tratamento de erro 404
 app.use((req, res, next) => {
 	next(createError(404, 'Rota não encontrada'));
+});
+
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Origin', 'https://localhost:3000');
+	res.setHeader('Access-Control-Allow-Credentials', 'true');
+	next();
 });
 
 // Middleware de erro
@@ -55,8 +72,14 @@ app.use((err, req, res, next) => {
 	});
 });
 
-// Iniciando servidor
+// Carregar os arquivos do certificado
+const options = {
+  key: fs.readFileSync('./ssl/private.key'),
+  cert: fs.readFileSync('./ssl/cert.crt')
+};
+
+// Iniciando servidor HTTPS
 const port = process.env.PORT || 8000;
-app.listen(port, () => {
-	console.log(`🚀 Servidor rodando na porta ${port}`);
+https.createServer(options, app).listen(port, () => {
+	console.log(`🚀 Servidor HTTPS rodando na porta ${port}`);
 });
